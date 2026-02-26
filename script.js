@@ -15,7 +15,7 @@ function validateTweet() {
     charLabel.textContent = `Limit exceeded by ${-remaining} characters (max 160).`;
     charLabel.style.color = 'red';
   } else {
-    tweetButton.disabled = false;
+    tweetButton.disabled = length === 0; 
     charLabel.textContent = `${remaining} characters remaining`;
     charLabel.style.color = '#536471';
   }
@@ -36,7 +36,16 @@ function postTweet() {
     const timeElement = clone.querySelector('.time');
 
     textElement.textContent = text;
-    timeElement.textContent = `· ${new Date().toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}`;
+
+    const now = new Date();
+    const dateTime = now.toLocaleString('en-US', {
+        month: 'short',
+        day: 'numeric',
+        year: 'numeric',
+        hour: 'numeric',
+        minute: '2-digit',
+    }).replace(',', '');
+    timeElement.textContent = `· ${dateTime}`;
 
     tweetFeed.insertBefore(clone, tweetFeed.firstChild);
 
