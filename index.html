@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tweeter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top-nav">
+    <div class="logo-circle"></div>
+    <span class="brand-text">Tweeter</span>
+  </header>
+
+  <main class="main-content">
+    <section class="tweet-box">
+      <div class="profile-photo"></div>
+
+      <div class="tweet-input-area">
+        <textarea id="tweetText" maxlength="160" placeholder="What's happening?"></textarea>
+        <div class="tweet-controls">
+          <span id="charLabel">160 characters remaining</span>
+          <button id="tweetButton">tweeet</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="tweet-feed" id="tweetFeed">
+      <article class="tweet">
+        <div class="profile-photo small"></div>
+        <div class="tweet-content">
+          <div class="tweet-header">
+            <span class="name">Karissa Solis</span>
+            <span class="username">@karissasolis</span>
+            <span class="time">· Feb 25, 2026</span>
+          </div>
+          <p class="tweet-text">
+            I completed my Tweeter page :p.
+          </p>
+          <div class="tweet-icons">
+            <span>💬</span>
+            <span>🔁</span>
+            <span>🔗</span>
+            <span>⤴️</span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <template id="tweetTemplate">
+      <article class="tweet">
+        <div class="profile-photo small"></div>
+        <div class="tweet-content">
+          <div class="tweet-header">
+            <span class="name">Karissa Solis</span>
+            <span class="username">@karissasolis</span>
+            <span class="time">· Just now</span>
+          </div>
+          <p class="tweet-text"></p>
+          <div class="tweet-icons">
+            <span>💬</span>
+            <span>🔁</span>
+            <span>🔗</span>
+            <span>⤴️</span>
+          </div>
+        </div>
+      </article>
+    </template>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
